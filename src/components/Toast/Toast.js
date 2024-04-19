@@ -19,10 +19,11 @@ const ICONS_BY_VARIANT = {
 };
 
 function Toast({ children, dismiss, variant }) {
+	const IconTag = ICONS_BY_VARIANT[variant];
 	return (
 		<div className={`${styles.toast} ${styles[variant]}`}>
 			<div className={styles.iconContainer}>
-				<Info size={24} />
+				<IconTag size={24} />
 			</div>
 			<p className={styles.content}>{children}</p>
 			<button onClick={dismiss} className={styles.closeButton}>
