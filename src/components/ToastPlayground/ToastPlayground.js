@@ -24,7 +24,7 @@ function ToastPlayground() {
 		setToastOn(true);
 		setMessage("");
 	}
-
+	console.log(messageList);
 	return (
 		<div className={styles.wrapper}>
 			<header>
@@ -33,9 +33,11 @@ function ToastPlayground() {
 			</header>
 
 			{toastOn && (
-				<ToastShelf variant={variant} dismiss={handleToastDisplay}>
-					{message}
-				</ToastShelf>
+				<ToastShelf
+					variant={variant}
+					dismiss={handleToastDisplay}
+					messageList={messageList}
+				/>
 			)}
 			<form onSubmit={handleSubmit}>
 				<div className={styles.controlsWrapper}>
