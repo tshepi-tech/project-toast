@@ -4,6 +4,7 @@ import Toast from "../Toast";
 import Button from "../Button";
 
 import styles from "./ToastPlayground.module.css";
+import ToastShelf from "../ToastShelf";
 
 const VARIANT_OPTIONS = ["notice", "warning", "success", "error"];
 
@@ -22,10 +23,11 @@ function ToastPlayground() {
 				<img alt="Cute toast mascot" src="/toast.png" />
 				<h1>Toast Playground</h1>
 			</header>
+
 			{toastOn && (
-				<Toast dismiss={handleToastDisplay} variant={variant}>
+				<ToastShelf variant={variant} dismiss={handleToastDisplay}>
 					{message}
-				</Toast>
+				</ToastShelf>
 			)}
 			<div className={styles.controlsWrapper}>
 				<div className={styles.row}>
